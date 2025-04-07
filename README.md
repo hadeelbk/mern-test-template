@@ -37,3 +37,6 @@ The developer should create an application that allows users to reserve one of t
 
 ## Estimated Time:
 Recommended working time is 6 hours, but the developer has the flexibility to take up to 2 working days to deliver the project.
+
+> [!IMPORTANT]  
+> Fork the project and provide the link to our team to review the code.
