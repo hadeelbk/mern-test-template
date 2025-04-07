@@ -1,0 +1,17 @@
+# node_modules for both frontend and backend
+server/node_modules
+
+# environment files
+.env
+
+# build outputs
+dist
+build
+
+# logs
+*.log
+
+# Docker volumes
+mongo-data/
+
+.DS_Store

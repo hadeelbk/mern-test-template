@@ -1,42 +1,71 @@
-# Virtual Meeting Slot Reservation System
+# 🗓️ Virtual Meeting Slot Reservation System
 
-## Project Description:
+A fullstack MERN application that allows users to reserve 15-minute meeting slots within designated time ranges. Built with **Nodejs** **React**, **Express**, **MongoDB**, and **Docker**.
 
-The developer should create an application that allows users to reserve one of the available 15-minute meeting slots, with the schedule ranging from 10:00 AM to 3:00 PM. The frontend should allow users to select a time slot and fill out a form with their name and email. This information should then be sent to the backend and stored in MongoDB.
+---
 
-## Task Requirements:
+## Features
 
-### 1. Frontend:
-- Use **React**
-- Use **MUI (Material UI)** for the user interface, displaying a list of available meeting slots.
-- Display the time slots clearly from 10:00 AM to 3:00 PM in 15-minute intervals.
-- Each slot should be selectable, opening a form to input the user’s name and email.
-- Show booked slots in frontend.
+- View available meeting slots (10:00 AM – 3:00 PM & 3:45 – 5:45 PM)
+- Book a time slot by submitting name and email
+- Booked slots are marked and disabled
+- Supports "consumable slots" (each slot can be booked only once)
+- Built with Vite + Material UI on the frontend
+- Dockerized for easy deployment and local development
 
-### 2. Backend:
-- Set up an **Express** server with **MongoDB** to handle reservations.
-- For non-consumable slots, allow a time slot to be reserved multiple times.
-- If consumable slots are implemented, ensure that each slot can only be reserved once.
+---
 
-## Application Flow:
-1. The user will see the available time slots on the frontend (from 10:00 AM to 3:00 PM).
-2. After selecting a slot, a form will open to input the user’s name and email.
-3. We list the slots and the bookings.
+## Tech Stack
 
-## Bonus (Optional)
-1. Implement consumable slots where each time slot can only be reserved once.
-2. Add a second period of slots between 3:45 PM to 5:45 PM
-2. Provide dockerfile and compose to run the project.
-3. Documentation - Provide a readme.md explaining solutions, assumptions and decisions
+- **Frontend:** React (Vite), Material UI, Axios, Nginx (for serving)
+- **Backend:** Node.js, Express, MongoDB, Mongoose
+- **Database:** MongoDB
+- **Containerization:** Docker & Docker Compose
 
-## Criteria:
-- The developer must submit a functional application that allows users to reserve virtual meeting slots.
-- The frontend should be clear and easy to use
-- The backend should correctly handle reservations and store them in MongoDB.
-- If consumable slots are implemented, ensure each slot can only be reserved once.
+---
 
-## Estimated Time:
-Recommended working time is 6 hours, but the developer has the flexibility to take up to 2 working days to deliver the project.
+## 🐳 Getting Started with Docker
 
-> [!IMPORTANT]  
-> Fork the project and provide the link to our team to review the code.
+### Prerequisites:
+- Docker and Docker Compose installed
+
+### Steps:
+
+1. Clone the repo:
+   
+   - git clone (HTTPS link)
+   - cd (root) 
+
+2. Install dependencies
+### Frontend
+- cd client
+- npm install
+
+### Backend
+- cd server
+- npm install
+
+
+## 🛠 Environment Setup
+
+- Before running the app, create a `.env` file in the server directory.
+- The .env file should contain the following variables:
+	•	PORT — the port for the Express server (default: 3001)
+	•	MONGO_URI — your MongoDB connection string
+** this can be provided upon request.. **
+
+
+3. Run the app:
+   - docker compose up --build
+   
+
+4.	Open in browser:
+   - Frontend: http://localhost:5173
+   - Backend API: http://localhost:3001/bookings   
+
+## Assumptions & Decisions
+	•	Only one user can book a specific time slot (consumable slots)
+	•	Used Material UI for a quick, clean UI
+	•	Built time ranges: Morning: (10:00 AM – 3:00 PM) and Afternoon: (3:45 – 5:45) PM
+	•	Docker used to streamline local dev and deployment
+	•	No user authentication in this version (public booking only)
